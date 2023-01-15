@@ -1,3 +1,4 @@
+
 public class Product {
     private String name;
     private int price;
@@ -13,13 +14,20 @@ public class Product {
 
     }
 
-
-    private boolean status = true;
-
     public boolean hasStock() {
-        return this.status;
+        if (quantity > 0) {
+            return true;
+        } else return false;
     }
 
+    public boolean isCategory(String givenCategory) {
+
+        if (givenCategory.equals(category)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public String toString() {
         return "My product has name %s and price %s and quantity %s and his category is %s . ".formatted(this.name, this.price, this.quantity, this.category);
